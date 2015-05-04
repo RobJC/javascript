@@ -61,3 +61,35 @@ var twice = multiplier(2);
 console.log(twice(5));
 // → 10
 
+//Higher order functions. Functions that act on other functions
+
+function forEach(array, action){
+    for(var i = 0 ; i < array.length ; i++){
+        action(array[i])
+    }
+}
+
+var numbers = [1,2,3,4,5];
+var sum = 0;
+
+forEach(numbers, function(number){
+    sum += number;
+});
+
+//
+function largerThan(n){
+  return function(m) { return m > n };
+}
+
+// Objects
+var person = {
+  name: "Jose",
+  age: 30,
+  "The power": "Programming"
+};
+
+person.weakness = "food";
+
+delete person.weakness //deletes the property value pair
+
+("name" in person); // returns true. property needs to be in strings
