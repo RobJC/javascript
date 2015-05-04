@@ -43,3 +43,36 @@ function printBoard(startingChar, boardSize){
 }
 
 printBoard("#", 5);
+
+// Min of two arguments
+function min(first, second){
+    return first <= second ? first : second;
+}
+
+// isEven
+function isEven(num){
+    num = Math.abs(num);
+    if(num === 0){
+        return true;
+    }
+    else{
+        return isEven(num-1) % 2 === 0;
+    }
+}
+
+// Count chars in a string
+function countB(str){
+    return countChars(str, "B");
+}
+
+function countChars(str, char){
+    var num = 0;
+    
+    for(var i = 0 ; i < str.length ; i++){
+        if(str.charAt(i) == char){
+            num += 1;
+        }
+    }
+    return num;
+}
+
